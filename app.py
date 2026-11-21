@@ -14,7 +14,7 @@ from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
 st.set_page_config(
     page_title="The Censorship Algorithm",
-    page_icon="📖",
+    page_icon="📚",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -175,7 +175,7 @@ fig_global, dot_data = build_static_visuals()
 
 # 3. HEADER & FAST SHARED BOOK SELECTOR
 
-st.markdown("# 📖 The Censorship Algorithm")
+st.markdown("# The Censorship Algorithm")
 st.markdown(
     f"<p style='color:#9ca3af; font-size:16px; margin-top:-10px;'>"
     f"Interactive Machine Learning X-Ray trained on <b>{len(df):,} books</b> · "
@@ -210,8 +210,8 @@ with col_info:
 
 st.write("")
 tab_lr, tab_tree = st.tabs([
-    f"📈 Logistic Regression · Text ({lr_acc*100:.1f}%)",
-    f"🌳 Decision Tree · Genre ({tree_acc*100:.1f}%)"
+    f" Logistic Regression · Text ({lr_acc*100:.1f}%)",
+    f" Decision Tree · Genre ({tree_acc*100:.1f}%)"
 ])
 
 

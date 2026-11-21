@@ -9,9 +9,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
-# ==============================================================================
+
 # 1. PAGE CONFIG & AESTHETIC STYLING (CUSTOM CSS)
-# ==============================================================================
+
 st.set_page_config(
     page_title="The Censorship Algorithm",
     page_icon="📖",
@@ -89,9 +89,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ==============================================================================
+
 # 2. DATA LOADING, MODEL TRAINING & STATIC VISUALS (CACHED)
-# ==============================================================================
+
 @st.cache_resource
 def load_and_train():
     df = pd.read_csv("merged_dataset.csv")
@@ -172,9 +172,9 @@ def build_static_visuals():
 
 fig_global, dot_data = build_static_visuals()
 
-# ==============================================================================
+
 # 3. HEADER & FAST SHARED BOOK SELECTOR
-# ==============================================================================
+
 st.markdown("# 📖 The Censorship Algorithm")
 st.markdown(
     f"<p style='color:#9ca3af; font-size:16px; margin-top:-10px;'>"
@@ -214,9 +214,9 @@ tab_lr, tab_tree = st.tabs([
     f"🌳 Decision Tree · Genre ({tree_acc*100:.1f}%)"
 ])
 
-# ==============================================================================
+
 # TAB 1: LOGISTIC REGRESSION (LINEAR MODEL ON SYNOPSIS)
-# ==============================================================================
+
 with tab_lr:
     st.write("")
     user_text = st.text_area(
@@ -336,9 +336,7 @@ with tab_lr:
     st.caption("Learned across all 13,000+ training synopses.")
     st.plotly_chart(fig_global, use_container_width=True)
 
-# ==============================================================================
 # TAB 2: DECISION TREE (GENRE RULES MODEL)
-# ==============================================================================
 with tab_tree:
     st.write("")
 

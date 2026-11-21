@@ -32,9 +32,9 @@ train_df, test_df = train_test_split(
     df, test_size=0.2, random_state=42, stratify=df[COL_TARGET]
 )
 
-# ==============================================================================
+
 # MODEL 1: LOGISTIC REGRESSION (on Book Descriptions via TF-IDF)
-# ==============================================================================
+
 tfidf = TfidfVectorizer(
     stop_words="english",
     max_features=3000,   # Top 3,000 most informative words
@@ -71,9 +71,9 @@ plt.tight_layout()
 plt.savefig("logistic_weights.png", dpi=150)
 plt.close()
 
-# ==============================================================================
-# FUNCTION TO EXPLAIN A SINGLE BOOK (FOR YOUR VIDEO DEMO)
-# ==============================================================================
+
+# FUNCTION TO EXPLAIN A SINGLE BOOK 
+
 def explain_book(book_title_query):
     matches = df[df[COL_TITLE].str.contains(book_title_query, case=False, na=False)]
     if matches.empty:
@@ -103,9 +103,9 @@ def explain_book(book_title_query):
 # Test it on a classic!
 explain_book("Fahrenheit 451")
 
-# ==============================================================================
+
 # MODEL 2: DECISION TREE (on Genres for Clear If/Else Rules)
-# ==============================================================================
+
 # Convert genre strings into binary presence/absence features
 genre_vec = CountVectorizer(binary=True, max_features=40, stop_words="english")
 X_train_genre = genre_vec.fit_transform(train_df[COL_GENRE])

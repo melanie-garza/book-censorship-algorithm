@@ -1,6 +1,6 @@
 # 📖 The Censorship Algorithm
 
-An interactive Machine Learning dashboard that opens the "black box" of U.S. book censorship. Trained on **16,439 books**, this project compares two interpretable models—each matched to the data type it handles best—to expose both real-world censorship patterns and algorithmic blind spots.
+An interactive Machine Learning dashboard that opens the "black box" of U.S. book censorship. Trained on **16,439 books**, this project compares two interpretable models each matched to the data type it handles best—to expose both real world censorship patterns and algorithmic blind spots.
 
 ## 🧠 Models & Performance
 
